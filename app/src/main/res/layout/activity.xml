@@ -36,6 +36,10 @@
                 android:textSize="@dimen/guillotine_item_text_size" />
         </android.support.v7.widget.Toolbar>
 
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <ImageView
             style="@style/ImageView.ContentItem"
             android:layout_marginTop="@dimen/guillotine_medium_margin"
