@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.yalantis.guillotine.sample.R;
+import com.yalantis.guillotine.sample.activity.EventDetails;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements View.OnClickListener {
     private ArrayList<String> mDataset;
 Context context;
+
 
     @Override
     public void onClick(View v) {
@@ -34,10 +37,12 @@ Context context;
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView mTextView;
+        public RelativeLayout rl;
         public ViewHolder(View v, MyAdapter myAdapter) {
             super(v);
             v.setOnClickListener(myAdapter);
             mTextView= (TextView) v.findViewById(R.id.text_recyle_list_item);
+            rl=(RelativeLayout)v.findViewById(R.id.relative_recycleviewer);
 
 
         }
@@ -64,11 +69,20 @@ this.context=context;
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.mTextView.setText(mDataset.get(position));
-
+holder.rl.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent in=new Intent(context, EventDetails.class);
+        Bundle b=new Bundle();
+        b.putInt("pos",position);
+        in.putExtras(b);
+        context.startActivity(in);
+    }
+});
     }
 
     // Return the size of your dataset (invoked by the layout manager)

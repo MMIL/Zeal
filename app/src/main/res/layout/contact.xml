@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    >
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/contact"
+        android:adjustViewBounds="true"
+        android:paddingBottom="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Email : abc@gmail.com"
+        android:layout_gravity="center"
+        android:textColor="#0660cd"
+        android:textSize="25sp"
+        android:id="@+id/textView"
+        android:paddingBottom="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Phone : 989746432XX"
+        android:layout_gravity="center"
+        android:textColor="#0660cd"
+        android:textSize="25sp"
+        android:id="@+id/textView2"
+        android:paddingBottom="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Address : JSS Academy Of Technical Education , C-20/1,Sector-62,Noida"
+        android:layout_gravity="center"
+        android:textColor="#0660cd"
+        android:textSize="25sp"
+        android:id="@+id/textView_contactus_address"
+        android:paddingBottom="50dp"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+        <Button android:layout_height="wrap_content" android:clickable="true" android:autoLink="web" android:cursorVisible="true" android:layout_width="match_parent" android:id="@+id/button_so" android:text="Zealicon Website" android:linksClickable="true" android:onClick="goToSo"></Button>
+        <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:text="MMIL" android:autoLink="web" android:clickable="true" android:id="@+id/button_su" android:onClick="goToSu"></Button>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+    <!-- From: file:/C:/Users/Rishabh%20Chauhan/AndroidStudioProjects/Zealicon/app/src/main/res/layout/activity_main.xml -->

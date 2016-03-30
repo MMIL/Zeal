@@ -17,7 +17,8 @@
         card_view:cardElevation="2dp">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_recycleviewer">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
