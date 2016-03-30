@@ -40,14 +40,7 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <ImageView
-            style="@style/ImageView.ContentItem"
-            android:layout_marginTop="@dimen/guillotine_medium_margin"
-            android:src="@drawable/content_1" />
 
-        <ImageView
-            style="@style/ImageView.ContentItem"
-            android:src="@drawable/content_2" />
 
 
     </LinearLayout>

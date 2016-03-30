@@ -1,10 +1,6 @@
 package com.yalantis.guillotine.sample.activity;
 
-import android.app.Fragment;
-
-import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,7 +10,7 @@ import android.widget.FrameLayout;
 
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 import com.yalantis.guillotine.sample.R;
-import com.yalantis.guillotine.sample.fragments.Profile;
+import com.yalantis.guillotine.sample.fragments.ZealiconMain;
 import com.yalantis.guillotine.sample.fragments.Tryit;
 
 import butterknife.ButterKnife;
@@ -51,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotine, null);
         guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(this);
         root.addView(guillotineMenu);
-        Profile p=new Profile();
+        ZealiconMain p=new ZealiconMain();
         FragmentManager f=getSupportFragmentManager();
         f.beginTransaction().add(R.id.fragment_container,p).commit();
         g=new GuillotineAnimation.GuillotineBuilder(guillotineMenu, guillotineMenu.findViewById(R.id.guillotine_hamburger), contentHamburger)

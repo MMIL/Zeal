@@ -53,6 +53,8 @@ public class SplashScreen extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                         Log.v("MyApp",error.toString());
+                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(in);
                     }
                 });
 
