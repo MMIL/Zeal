@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.fragments.ZealiconMain;
-import com.yalantis.guillotine.sample.fragments.Tryit;
+import com.yalantis.guillotine.sample.fragments.Events;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Tryit p=new Tryit();
+        Events p=new Events();
 android.support.v4.app.FragmentTransaction f=getSupportFragmentManager().beginTransaction();
        f .replace(R.id.fragment_container, p);
         f.addToBackStack(null);
