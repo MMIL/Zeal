@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.widget.MyAdapter;
@@ -20,9 +21,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by my hp on 3/30/2016.
+ * Created by my hp on 4/1/2016.
  */
-public class Events extends Fragment{
+public class Mechavoltz extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -33,7 +34,8 @@ public class Events extends Fragment{
 
         View v = inflater.inflate(R.layout.events,container,false);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view_events);
-
+        ImageView im=(ImageView)v.findViewById(R.id.image_events_superhero);
+        im.setImageResource(R.drawable.ironman);
 
 
         // use this setting to improve performance if you know that changes
@@ -45,7 +47,7 @@ public class Events extends Fragment{
         mRecyclerView.setLayoutManager(mLayoutManager);
         SharedPreferences sf=getActivity().getSharedPreferences("events",0);
 
-        loaddata(sf.getString("coderz","none"));
+        loaddata(sf.getString("mechavoltz","none"));
         return v;
     }
 
@@ -61,14 +63,15 @@ public class Events extends Fragment{
         {
             try {
                 JSONObject jt=ja.getJSONObject(i);
-               ar.add(jt.getString("event_name"));
+                ar.add(jt.getString("event_name"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            mAdapter = new MyAdapter(ar,getContext(),0);
+            mAdapter = new MyAdapter(ar,getContext(),"mechavoltz");
             // mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setAdapter(mAdapter);
 
         }
     }
 }
+

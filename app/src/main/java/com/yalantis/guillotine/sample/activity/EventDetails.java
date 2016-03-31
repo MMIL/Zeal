@@ -33,15 +33,32 @@ public class EventDetails extends AppCompatActivity {
         TextView second=(TextView)findViewById(R.id.text_event_details_secondprize);
         TextView contact=(TextView)findViewById(R.id.text_event_details_contact);
         SharedPreferences sf=getSharedPreferences("events",0);
-        int position=getIntent().getExtras().getInt("pos",0);
+        int position=getIntent().getExtras().getInt("pos", 0);
+        String token=getIntent().getExtras().getString("token","coderz");
         try {
-            JSONArray ja=new JSONArray(sf.getString("eventsjson","none"));
+            JSONArray ja=new JSONArray(sf.getString(token,"coderz"));
             JSONObject jo=ja.getJSONObject(position);
+            String contact_number=null;
+            if(jo.getString("contact").equals("")){
+                contact_number="No contacts";
+
+            }
+            else {
+                JSONArray contact_array=new JSONArray(jo.getString("contact"));
+                StringBuilder sb=new StringBuilder();
+                for(int i=0;i<contact_array.length();i++) {
+                    JSONObject contact_details = contact_array.getJSONObject(i);
+                    sb.append(contact_details.getString("name")+" : "+"\n");
+                    sb.append("    "+contact_details.getString("number")+"\n");
+                }
+                contact_number=sb.toString();
+
+            }
             name.setText(jo.getString("event_name"));
             description.setText(jo.getString("event_description"));
             first.setText(jo.getString("1st_place"));
             second.setText(jo.getString("2nd_place"));
-            contact.setText(jo.getString("contact"));
+            contact.setText(contact_number);
         } catch (JSONException e) {
             e.printStackTrace();
         }
