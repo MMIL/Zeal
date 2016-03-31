@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,20 +45,34 @@ public class EventDetails extends AppCompatActivity {
 
             }
             else {
-                JSONArray contact_array=new JSONArray(jo.getString("contact"));
-                StringBuilder sb=new StringBuilder();
-                for(int i=0;i<contact_array.length();i++) {
+                JSONArray contact_array = new JSONArray(jo.getString("contact"));
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < contact_array.length(); i++) {
                     JSONObject contact_details = contact_array.getJSONObject(i);
-                    sb.append(contact_details.getString("name")+" : "+"\n");
-                    sb.append("    "+contact_details.getString("number")+"\n");
+                    sb.append(contact_details.getString("name") + " : " + "\n");
+                    sb.append("    " + contact_details.getString("number") + "\n");
                 }
                 contact_number=sb.toString();
-
             }
+            Log.v("PRIZE_MONEY",jo.getString("prize_money"));
+                String firstprize="No Idea";
+                String secondprize="No Idea";
+                if(jo.getString("prize_money").equals("null")){
+                    firstprize="No Idea";
+                    secondprize="No Idea";
+                }
+                else {
+                    JSONArray prizearray=new JSONArray(jo.getString("prize_money"));
+                    firstprize=prizearray.getString(0);
+                    secondprize=prizearray.getString(1);
+                }
+
+
+
             name.setText(jo.getString("event_name"));
             description.setText(jo.getString("event_description"));
-            first.setText(jo.getString("1st_place"));
-            second.setText(jo.getString("2nd_place"));
+            first.setText(firstprize);
+            second.setText(secondprize);
             contact.setText(contact_number);
         } catch (JSONException e) {
             e.printStackTrace();

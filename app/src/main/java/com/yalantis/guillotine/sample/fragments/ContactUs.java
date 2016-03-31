@@ -39,6 +39,15 @@ public class ContactUs extends Fragment {
                 startActivity(launchBrowser);
             }
         });
+        v.findViewById(R.id.map_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:28.6144,77.3588?z=16");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
 
         return v;
     }

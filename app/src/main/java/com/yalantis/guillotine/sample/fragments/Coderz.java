@@ -73,4 +73,10 @@ public class Coderz extends Fragment{
 
         }
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+    }
 }

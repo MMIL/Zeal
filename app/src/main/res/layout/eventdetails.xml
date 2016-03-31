@@ -5,9 +5,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
 
+
     android:layout_height="match_parent">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -22,6 +24,15 @@
             android:elevation="2dp"/>
 
     </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -157,4 +168,6 @@
         android:id="@+id/text_event_details_contact" />
     </android.support.v7.widget.CardView>
         </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

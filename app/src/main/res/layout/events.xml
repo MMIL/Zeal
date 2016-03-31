@@ -16,7 +16,7 @@
         android:scrollbars="vertical"
 
         android:layout_width="match_parent"
-        android:layout_height="381dp"
+        android:layout_height="358dp"
 
 
 

@@ -10,10 +10,14 @@ import android.widget.FrameLayout;
 
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 import com.yalantis.guillotine.sample.R;
+import com.yalantis.guillotine.sample.fragments.Coloralo;
 import com.yalantis.guillotine.sample.fragments.ContactUs;
+import com.yalantis.guillotine.sample.fragments.Mechavoltz;
 import com.yalantis.guillotine.sample.fragments.Playiton;
+import com.yalantis.guillotine.sample.fragments.Robotiles;
 import com.yalantis.guillotine.sample.fragments.ZealiconMain;
 import com.yalantis.guillotine.sample.fragments.Coderz;
+import com.yalantis.guillotine.sample.fragments.Zwars;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -46,9 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             getSupportActionBar().setTitle(null);
         }
 
-        View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotine, null);
+        View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotinetry, null);
         guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(this);
-        guillotineMenu.findViewById(R.id.feed_group).setOnClickListener(this);
+       // guillotineMenu.findViewById(R.id.feed_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.coderz_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.playiton_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.mechavoltz_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.robotiles_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.coloralo_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.zwars_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.settings_group).setOnClickListener(this);
+
         guillotineMenu.findViewById(R.id.activity_group).setOnClickListener(this);
         root.addView(guillotineMenu);
         ZealiconMain p=new ZealiconMain();
@@ -72,12 +84,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             i.commit();
             g.close();
                 break;
-            case R.id.feed_group:
-                Playiton p = new Playiton();
-                android.support.v4.app.FragmentTransaction f = getSupportFragmentManager().beginTransaction();
-                f.replace(R.id.fragment_container, p);
-                f.addToBackStack(null);
-                f.commit();
+            case R.id.coderz_group:
+                Coderz p1 = new Coderz();
+                android.support.v4.app.FragmentTransaction f1 = getSupportFragmentManager().beginTransaction();
+                f1.replace(R.id.fragment_container, p1);
+                f1.addToBackStack(null);
+                f1.commit();
+                g.close();
+                break;
+            case R.id.playiton_group:
+                Playiton p2 = new Playiton();
+                android.support.v4.app.FragmentTransaction f2 = getSupportFragmentManager().beginTransaction();
+                f2.replace(R.id.fragment_container, p2);
+                f2.addToBackStack(null);
+                f2.commit();
+                g.close();
+                break;
+            case R.id.mechavoltz_group:
+                Mechavoltz p3 = new Mechavoltz();
+                android.support.v4.app.FragmentTransaction f3 = getSupportFragmentManager().beginTransaction();
+                f3.replace(R.id.fragment_container, p3);
+                f3.addToBackStack(null);
+                f3.commit();
+                g.close();
+                break;
+            case R.id.robotiles_group:
+                Robotiles p4 = new Robotiles();
+                android.support.v4.app.FragmentTransaction f4 = getSupportFragmentManager().beginTransaction();
+                f4.replace(R.id.fragment_container, p4);
+                f4.addToBackStack(null);
+                f4.commit();
+                g.close();
+                break;
+            case R.id.coloralo_group:
+                Coloralo p5 = new Coloralo();
+                android.support.v4.app.FragmentTransaction f5 = getSupportFragmentManager().beginTransaction();
+                f5.replace(R.id.fragment_container, p5);
+                f5.addToBackStack(null);
+                f5.commit();
+                g.close();
+                break;
+            case R.id.zwars_group:
+                Zwars p6 = new Zwars();
+                android.support.v4.app.FragmentTransaction f6 = getSupportFragmentManager().beginTransaction();
+                f6.replace(R.id.fragment_container, p6);
+                f6.addToBackStack(null);
+                f6.commit();
                 g.close();
                 break;
             case R.id.activity_group:
@@ -88,6 +140,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 j.commit();
                 g.close();
                 break;
+            case R.id.settings_group:
+                finish();
+                break;
         }
     }
+
+
 }

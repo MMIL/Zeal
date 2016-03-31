@@ -4,4 +4,17 @@
     <string name="feed">FEED</string>
     <string name="activity">ACTIVITY</string>
     <string name="settings">SETTINGS</string>
+    <string name="coderz">CODERZ</string>
+
+    <string name="play_it_on">PLAY IT ON</string>
+
+    <string name="mechavoltz">MECHAVOLTZ</string>
+
+    <string name="robotiles">ROBOTILES</string>
+
+    <string name="coloralo">COLORALO</string>
+
+    <string name="z_wars">Z-WARS</string>
+    <string name="zealicon">Zealicon</string>
+    <string name="events">Events</string>
 </resources>
