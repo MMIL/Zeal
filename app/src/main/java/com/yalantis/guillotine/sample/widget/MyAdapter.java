@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements View.OnClickListener {
     private ArrayList<String> mDataset;
 Context context;
-
+int token;
 
     @Override
     public void onClick(View v) {
@@ -49,7 +49,7 @@ Context context;
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<String> myDataset, Context context) {
+    public MyAdapter(ArrayList<String> myDataset, Context context,int token) {
         mDataset = myDataset;
 this.context=context;
     }
@@ -79,6 +79,7 @@ holder.rl.setOnClickListener(new View.OnClickListener() {
         Intent in=new Intent(context, EventDetails.class);
         Bundle b=new Bundle();
         b.putInt("pos",position);
+
         in.putExtras(b);
         context.startActivity(in);
     }

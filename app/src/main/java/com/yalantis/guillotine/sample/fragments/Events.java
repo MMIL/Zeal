@@ -45,7 +45,7 @@ public class Events extends Fragment{
         mRecyclerView.setLayoutManager(mLayoutManager);
         SharedPreferences sf=getActivity().getSharedPreferences("events",0);
 
-        loaddata(sf.getString("eventsjson","none"));
+        loaddata(sf.getString("coderz","none"));
         return v;
     }
 
@@ -65,7 +65,7 @@ public class Events extends Fragment{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            mAdapter = new MyAdapter(ar,getContext());
+            mAdapter = new MyAdapter(ar,getContext(),0);
             // mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setAdapter(mAdapter);
 
