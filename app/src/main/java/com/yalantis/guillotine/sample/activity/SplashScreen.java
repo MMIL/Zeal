@@ -29,11 +29,12 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+
         requestjson();
     }
 
     private void requestjson() {
-        String url="http://zealbo.hackncs.com/events/0";
+        String url="http://zealbo.hackncs.com/events/1";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
