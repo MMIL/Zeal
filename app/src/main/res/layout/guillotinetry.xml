@@ -38,6 +38,19 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/activity_register"
+                style="@style/LinearLayout.GuillotineItem">
+
+                <ImageView
+                    style="@style/ImageView.GuillotineItem"
+                    android:src="@drawable/ic_activity_active" />
+
+                <com.yalantis.guillotine.sample.widget.CanaroTextView
+                    style="@style/TextView.GuillotineItem"
+                    android:text="@string/register" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/feed_group"
                 style="@style/LinearLayout.GuillotineItem">
 
