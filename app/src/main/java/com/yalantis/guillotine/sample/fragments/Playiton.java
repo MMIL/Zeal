@@ -4,12 +4,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.widget.MyAdapter;
@@ -36,7 +38,12 @@ public class Playiton extends Fragment {
         mRecyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view_events);
         ImageView im=(ImageView)v.findViewById(R.id.image_events_superhero);
         im.setImageResource(R.drawable.wolverine);
+        LinearLayout l=(LinearLayout)v.findViewById(R.id.eventspage);
 
+        l.setBackgroundResource(R.drawable.playitonbackground);
+
+      //  CardView cardView=(CardView)v.findViewById(R.id.card_view_recycleitem);
+      //  cardView.setCardBackgroundColor(getResources().getColor(R.color.playiton));
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView

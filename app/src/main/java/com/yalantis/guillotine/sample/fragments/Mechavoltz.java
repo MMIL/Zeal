@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.widget.MyAdapter;
@@ -36,7 +37,9 @@ public class Mechavoltz extends Fragment {
         mRecyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view_events);
         ImageView im=(ImageView)v.findViewById(R.id.image_events_superhero);
         im.setImageResource(R.drawable.ironman);
+        LinearLayout l=(LinearLayout)v.findViewById(R.id.eventspage);
 
+        l.setBackgroundResource(R.drawable.mechavoltz);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
