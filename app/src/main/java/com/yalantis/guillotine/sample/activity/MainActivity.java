@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         guillotineMenu.findViewById(R.id.zwars_group).setOnClickListener(this);
         guillotineMenu.findViewById(R.id.settings_group).setOnClickListener(this);
 
+
         guillotineMenu.findViewById(R.id.activity_group).setOnClickListener(this);
         root.addView(guillotineMenu);
         ZealiconMain p=new ZealiconMain();
