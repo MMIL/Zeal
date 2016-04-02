@@ -1,6 +1,7 @@
 package com.yalantis.guillotine.sample.fragments;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.widget.MyAdapter;
@@ -38,7 +40,10 @@ public class Mechavoltz extends Fragment {
         ImageView im=(ImageView)v.findViewById(R.id.image_events_superhero);
         im.setImageResource(R.drawable.ironman);
         LinearLayout l=(LinearLayout)v.findViewById(R.id.eventspage);
-
+        TextView tv=(TextView)v.findViewById(R.id.categories_events);
+        tv.setText("MECHAVOLTZ");
+        Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(), "huggable.ttf");
+        tv.setTypeface(custom_font);
         l.setBackgroundResource(R.drawable.mechavoltz);
 
         // use this setting to improve performance if you know that changes

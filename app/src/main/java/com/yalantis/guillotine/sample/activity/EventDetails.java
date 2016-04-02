@@ -98,9 +98,9 @@ eventname=jo.getString("event_name");
             String timing[]=jo.getString("timing").split(" ");
             eventdescription=Html.fromHtml(eventdescription).toString();
             longdescription=Html.fromHtml(longdescription).toString();
-            timing[1]=timing[1].substring(0,4);
+            timing[1]=timing[1].substring(0,5);
 
-            String finaldescription=eventdescription+"\n"+longdescription+"\n"+"Rules:"+"\n"+"Date: "+timing[0]+"\n"+"Time: "+timing[1];
+            String finaldescription=eventdescription+"\n"+longdescription+"\n"+"Rules:"+rules+"\n"+"Date: "+timing[0]+"\n"+"Time: "+timing[1];
             name.setText(jo.getString("event_name"));
             //finaldescription=Html.fromHtml(finaldescription).toString();
             description.setText(finaldescription);

@@ -3,6 +3,7 @@ package com.yalantis.guillotine.sample.fragments;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.widget.MyAdapter;
@@ -49,7 +51,10 @@ public class Coderz extends Fragment{
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
-
+TextView tv=(TextView)v.findViewById(R.id.categories_events);
+        tv.setText("CODERZ");
+        Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(), "huggable.ttf");
+        tv.setTypeface(custom_font);
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);

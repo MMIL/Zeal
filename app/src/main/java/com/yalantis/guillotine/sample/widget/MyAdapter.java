@@ -2,6 +2,7 @@ package com.yalantis.guillotine.sample.widget;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -45,6 +46,7 @@ String token;
             rl=(RelativeLayout)v.findViewById(R.id.relative_recycleviewer);
 
 
+
         }
     }
 
@@ -73,6 +75,8 @@ this.context=context;
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+        Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "mandingo.ttf");
+        holder.mTextView.setTypeface(custom_font);
         holder.mTextView.setText(mDataset.get(position));
 holder.rl.setOnClickListener(new View.OnClickListener() {
     @Override

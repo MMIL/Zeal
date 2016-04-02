@@ -1,6 +1,7 @@
 package com.yalantis.guillotine.sample.fragments;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.widget.MyAdapter;
@@ -40,7 +42,10 @@ public class Coloralo extends Fragment {
         LinearLayout l=(LinearLayout)v.findViewById(R.id.eventspage);
 
         l.setBackgroundResource(R.drawable.coloralo);
-
+        TextView tv=(TextView)v.findViewById(R.id.categories_events);
+        tv.setText("COLORALO");
+        Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(), "huggable.ttf");
+        tv.setTypeface(custom_font);
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
