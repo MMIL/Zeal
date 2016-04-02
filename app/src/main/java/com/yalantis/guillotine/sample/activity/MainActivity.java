@@ -14,6 +14,7 @@ import com.yalantis.guillotine.sample.R;
 import com.yalantis.guillotine.sample.fragments.Coloralo;
 import com.yalantis.guillotine.sample.fragments.ContactUs;
 import com.yalantis.guillotine.sample.fragments.Mechavoltz;
+import com.yalantis.guillotine.sample.fragments.OurTeam;
 import com.yalantis.guillotine.sample.fragments.Playiton;
 import com.yalantis.guillotine.sample.fragments.Robotiles;
 import com.yalantis.guillotine.sample.fragments.ZealiconMain;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         guillotineMenu.findViewById(R.id.coloralo_group).setOnClickListener(this);
         guillotineMenu.findViewById(R.id.zwars_group).setOnClickListener(this);
         guillotineMenu.findViewById(R.id.settings_group).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.our_team).setOnClickListener(this);
 
 
         guillotineMenu.findViewById(R.id.activity_group).setOnClickListener(this);
@@ -92,6 +94,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 f1.replace(R.id.fragment_container, p1);
                 f1.addToBackStack(null);
                 f1.commit();
+                g.close();
+                break;
+            case R.id.our_team:
+                OurTeam our=new OurTeam();
+                android.support.v4.app.FragmentTransaction four = getSupportFragmentManager().beginTransaction();
+                four.replace(R.id.fragment_container, our);
+                four.addToBackStack(null);
+                four.commit();
                 g.close();
                 break;
             case R.id.playiton_group:

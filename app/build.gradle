@@ -28,4 +28,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
 }
