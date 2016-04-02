@@ -31,7 +31,7 @@
         android:layout_height="175dp"
         android:src="@drawable/spiderman"
         android:adjustViewBounds="true"
-android:layout_gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
 
         android:id="@+id/image_events_superhero" />
         </LinearLayout>
