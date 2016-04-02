@@ -30,6 +30,8 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <service android:name=".service.NotificationService"/>
+        <receiver android:name=".service.NotificationService$AlarmReceiver"/>
     </application>
 
 </manifest>
