@@ -29,8 +29,15 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
-
+SharedPreferences sf=getSharedPreferences("firsttime",0);
+       int i= sf.getInt("first",0);
+        if(i==0)
         requestjson();
+        else
+        {
+            Intent in=new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(in);
+        }
     }
 
     private void requestjson() {
@@ -46,6 +53,8 @@ public class SplashScreen extends AppCompatActivity {
                         Log.v("MyApp", response);
                         SharedPreferences s=getSharedPreferences("events",0);
                         s.edit().putString("coderz",response).apply();
+                        SharedPreferences sf=getSharedPreferences("firsttime",0);
+                        sf.edit().putInt("first", 1).apply();
 Intent in =new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(in);
 
@@ -57,7 +66,7 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                         Log.v("MyApp",error.toString());
-                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        Intent in=new Intent(getApplicationContext(),Retry.class);
                         startActivity(in);
                     }
                 });
@@ -79,8 +88,9 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
-                        Log.v("MyApp",error.toString());
-                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        Log.v("MyApp", error.toString());
+
+                        Intent in=new Intent(getApplicationContext(),Retry.class);
                         startActivity(in);
                     }
                 });
@@ -103,7 +113,7 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                         Log.v("MyApp",error.toString());
-                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        Intent in=new Intent(getApplicationContext(),Retry.class);
                         startActivity(in);
                     }
                 });
@@ -126,7 +136,7 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                         Log.v("MyApp",error.toString());
-                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        Intent in=new Intent(getApplicationContext(),Retry.class);
                         startActivity(in);
                     }
                 });
@@ -149,7 +159,7 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                         Log.v("MyApp",error.toString());
-                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        Intent in=new Intent(getApplicationContext(),Retry.class);
                         startActivity(in);
                     }
                 });
@@ -172,7 +182,7 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
                     public void onErrorResponse(VolleyError error) {
                         //You can handle error here if you want
                         Log.v("MyApp",error.toString());
-                        Intent in=new Intent(getApplicationContext(),MainActivity.class);
+                        Intent in=new Intent(getApplicationContext(),Retry.class);
                         startActivity(in);
                     }
                 });

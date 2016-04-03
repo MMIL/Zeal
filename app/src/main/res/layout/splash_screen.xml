@@ -22,9 +22,11 @@
         android:textSize="24sp"
         android:fontFamily="sans-serif-light"
         android:text="Superheroes On Your Way!"/>
-    <android.support.v4.widget.ContentLoadingProgressBar
+    <ProgressBar
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"/>
+        android:visibility="visible"
+        style="@android:style/Widget.ProgressBar"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

@@ -36,6 +36,10 @@
             android:name=".activity.Register"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.Retry"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
