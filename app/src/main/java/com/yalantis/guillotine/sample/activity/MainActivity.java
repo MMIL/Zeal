@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 import com.yalantis.guillotine.sample.R;
@@ -51,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(null);
         }
+        TextView tv_extravaganza=(TextView)findViewById(R.id.zealicon_title);
+        Typeface custom_font_extravaganza = Typeface.createFromAsset(getApplicationContext().getAssets(), "playsir.otf");
+        tv_extravaganza.setTypeface(custom_font_extravaganza);
 
         View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.guillotinetry, null);
         guillotineMenu.findViewById(R.id.profile_group).setOnClickListener(this);

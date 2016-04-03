@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,9 +39,11 @@ public class EventDetails extends AppCompatActivity {
     String dateofevent;
     String eventname;
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.eventdetails);
+        setContentView(R.layout.eventdetailsnew);
         Toolbar t = (Toolbar) findViewById(R.id.toolbar_eventdetails);
         setSupportActionBar(t);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -100,7 +104,7 @@ eventname=jo.getString("event_name");
             longdescription=Html.fromHtml(longdescription).toString();
             timing[1]=timing[1].substring(0,5);
 
-            String finaldescription=eventdescription+"\n"+longdescription+"\n"+"Rules:"+rules+"\n"+"Date: "+timing[0]+"\n"+"Time: "+timing[1];
+            String finaldescription=eventdescription+"\n"+longdescription+"\n"+rules+"\n"+"Date: "+timing[0]+"\n"+"Time: "+timing[1];
             name.setText(jo.getString("event_name"));
             //finaldescription=Html.fromHtml(finaldescription).toString();
             description.setText(finaldescription);
@@ -123,6 +127,7 @@ eventname=jo.getString("event_name");
                 }
             }
         });
+    styleTexts();
     }
 
     private void canclenotifyme() {
@@ -170,6 +175,31 @@ eventname=jo.getString("event_name");
         }
         return super.onOptionsItemSelected(item);
     }
+     private void styleTexts()
+     {
+         TextView v1=(TextView)findViewById(R.id.text_event_details_name);
+         TextView v2=(TextView)findViewById(R.id.toggle_text);
+         TextView v3=(TextView)findViewById(R.id.text_event_details_description);
+         TextView v4=(TextView)findViewById(R.id.text_event_details_firstprize);
+         TextView v5=(TextView)findViewById(R.id.text_event_details_secondprize);
+         TextView v6=(TextView)findViewById(R.id.text_event_details_contact);
+         TextView v7=(TextView)findViewById(R.id.contact_text);
+         TextView v8=(TextView)findViewById(R.id.call_text);
+
+         settextstyle(v1);
+         settextstyle(v2);
+         settextstyle(v3);
+         settextstyle(v4);
+         settextstyle(v5);
+         settextstyle(v6);
+         settextstyle(v7);
+         settextstyle(v8);
+     }
+    private void settextstyle(TextView tv1) {
+        Typeface custom_font = Typeface.createFromAsset(getApplicationContext().getAssets(), "huggable.ttf");
+        tv1.setTypeface(custom_font);
+    }
+
 
     @Override
     protected void onPause() {
