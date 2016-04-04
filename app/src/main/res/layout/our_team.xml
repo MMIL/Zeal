@@ -5,24 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/superheroesnavigation">
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
 
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_sponsors"
-            android:layout_width="match_parent"
-            app:title="Book Details"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:elevation="2dp"/>
-
-    </android.support.design.widget.AppBarLayout>
-    <ScrollView
+         <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -181,13 +166,41 @@
                         android:layout_gravity="center_horizontal"
                         android:paddingBottom="15dp"
                         />
-                </LinearLayout></LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="99">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="33">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:src="@drawable/anubhav"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Anibhav Singh"
+                        android:fontFamily="sans-serif-light"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingBottom="15dp"
+                        />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -207,19 +220,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Kanishk Sharma"
+                        android:text="KAnishk Sharma"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/textView3"
                         android:layout_gravity="center_horizontal"
                         android:paddingBottom="15dp"
                         />
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_weight="33">
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/profile_image"
@@ -235,33 +248,6 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:text="Sumit Pundir"
-                        android:fontFamily="sans-serif-light"
-                        android:id="@+id/textView3"
-                        android:layout_gravity="center_horizontal"
-                        android:paddingBottom="15dp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="33">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/profile_image"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        android:src="@drawable/rishabh"
-                        app:civ_border_width="2dp"
-                        app:civ_border_color="#FF000000"
-                        android:layout_gravity="center_horizontal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Rishabh Chauhan"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/textView3"
                         android:layout_gravity="center_horizontal"
@@ -310,7 +296,7 @@
                         android:id="@+id/profile_image"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:src="@drawable/kp"
+                        android:src="@drawable/rishabh"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"
                         android:layout_gravity="center_horizontal" />
@@ -319,7 +305,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="KP Kushal"
+                        android:text="Rishabh Chauhan"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/textView3"
                         android:layout_gravity="center_horizontal"
@@ -337,7 +323,7 @@
                         android:id="@+id/profile_image"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:src="@drawable/shivanika"
+                        android:src="@drawable/kp"
                         app:civ_border_width="2dp"
                         app:civ_border_color="#FF000000"
                         android:layout_gravity="center_horizontal" />
@@ -346,7 +332,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Shivanika Shah"
+                        android:text="KP Kushal"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/textView3"
                         android:layout_gravity="center_horizontal"
@@ -359,6 +345,34 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/shivanika"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Shivanika Shah"
+                    android:fontFamily="sans-serif-light"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="15dp"
+                    />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -386,6 +400,7 @@
                     android:paddingBottom="15dp"
                     />
             </LinearLayout>
+
         </LinearLayout>
 
         </LinearLayout>

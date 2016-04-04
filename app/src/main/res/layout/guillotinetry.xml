@@ -211,7 +211,7 @@
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem.Selected"
-                    android:text="Our Team"
+                    android:text="Team"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
             <LinearLayout

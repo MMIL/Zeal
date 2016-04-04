@@ -70,7 +70,8 @@ android:fontFamily="sans-serif-light"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="50"
-            android:src="@drawable/register_button"/>
+            android:src="@drawable/register_button"
+            android:id="@+id/imageview_register" />
 
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="100dp"

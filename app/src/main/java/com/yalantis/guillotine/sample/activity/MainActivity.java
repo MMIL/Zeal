@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setActionBarViewForAnimation(toolbar)
                 .setClosedOnStart(true)
                 .build();
+
     }
 
     @Override
