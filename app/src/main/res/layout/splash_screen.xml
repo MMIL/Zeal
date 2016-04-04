@@ -22,6 +22,14 @@
         android:textSize="24sp"
         android:fontFamily="sans-serif-light"
         android:text="Superheroes On Your Way!"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-light"
+        android:text="Internet required only for the first time"/>
     <ProgressBar
         android:layout_width="100dp"
         android:layout_height="100dp"

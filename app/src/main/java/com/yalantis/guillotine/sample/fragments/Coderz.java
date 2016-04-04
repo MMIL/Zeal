@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.fragments;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -34,6 +35,7 @@ public class Coderz extends Fragment{
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    ProgressDialog pd ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,7 +46,8 @@ public class Coderz extends Fragment{
         ImageView im=(ImageView)v.findViewById(R.id.image_events_superhero);
         im.setImageResource(R.drawable.spiderman);
         LinearLayout l=(LinearLayout)v.findViewById(R.id.eventspage);
-
+        pd = new ProgressDialog(getActivity(),ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("ruko yar aa rha ha na");
         l.setBackgroundResource(R.drawable.coderzbackground);
        // CardView cardView=(CardView)v.findViewById(R.id.card_view_recycleitem);
        // cardView.setCardBackgroundColor(getResources().getColor(R.color.coderz));
@@ -80,7 +83,7 @@ TextView tv=(TextView)v.findViewById(R.id.categories_events);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            mAdapter = new MyAdapter(ar,getContext(),"coderz");
+            mAdapter = new MyAdapter(ar,getContext(),"coderz",pd);
             // mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setAdapter(mAdapter);
 
@@ -90,6 +93,7 @@ TextView tv=(TextView)v.findViewById(R.id.categories_events);
     @Override
     public void onPause() {
         super.onPause();
+        pd.hide();
 
     }
 }

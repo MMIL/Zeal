@@ -1,12 +1,16 @@
 package com.yalantis.guillotine.sample.activity;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -36,8 +40,9 @@ import java.util.Date;
  * Created by my hp on 3/31/2016.
  */
 public class EventDetails extends AppCompatActivity {
-    String dateofevent;
+    String dateofevent="hello";
     String eventname;
+    String pno="8860488735";
     @Override
 
 
@@ -54,7 +59,23 @@ public class EventDetails extends AppCompatActivity {
         TextView first = (TextView) findViewById(R.id.text_event_details_firstprize);
         TextView second = (TextView) findViewById(R.id.text_event_details_secondprize);
         TextView contact = (TextView) findViewById(R.id.text_event_details_contact);
-
+        findViewById(R.id.callbutton_eventdetails).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + pno));
+                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                startActivity(intent);
+            }
+        });
         SharedPreferences sf = getSharedPreferences("events", 0);
         int position = getIntent().getExtras().getInt("pos", 0);
         String token = getIntent().getExtras().getString("token", "coderz");
@@ -68,10 +89,11 @@ public class EventDetails extends AppCompatActivity {
             } else {
                 JSONArray contact_array = new JSONArray(jo.getString("contact"));
                 StringBuilder sb = new StringBuilder();
+                pno=contact_array.getJSONObject(0).getString("number");
                 for (int i = 0; i < contact_array.length(); i++) {
                     JSONObject contact_details = contact_array.getJSONObject(i);
-                    sb.append(contact_details.getString("name") + " : " + "\n");
-                    sb.append("    " + contact_details.getString("number") + "\n");
+                    sb.append(contact_details.getString("name") + " : ");
+                    sb.append(contact_details.getString("number") + "\n");
                 }
                 contact_number = sb.toString();
             }
@@ -108,6 +130,9 @@ eventname=jo.getString("event_name");
             name.setText(jo.getString("event_name"));
             //finaldescription=Html.fromHtml(finaldescription).toString();
             description.setText(finaldescription);
+            if(jo.getString("timing").equals("null")||jo.getString("timing").equals(null))
+            dateofevent="hello";
+            else
             dateofevent=jo.getString("timing");
           //  Log.e("Event", Html.fromHtml(jo.getString("event_description")).toString());
             first.setText(firstprize);
@@ -120,9 +145,9 @@ eventname=jo.getString("event_name");
         switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    notifyme();
-                } else {
+                if (isChecked&&!dateofevent.equals("hello")) {
+                                        notifyme();
+                } else if(!dateofevent.equals("hello")){
                     canclenotifyme();
                 }
             }

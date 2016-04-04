@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.fragments;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class Coloralo extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    ProgressDialog pd ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +42,8 @@ public class Coloralo extends Fragment {
         ImageView im=(ImageView)v.findViewById(R.id.image_events_superhero);
         im.setImageResource(R.drawable.superman);
         LinearLayout l=(LinearLayout)v.findViewById(R.id.eventspage);
-
+        pd = new ProgressDialog(getContext(),ProgressDialog.STYLE_SPINNER) ;
+        pd.setMessage("RUKO AA RHA HAI");
         l.setBackgroundResource(R.drawable.coloralo);
         TextView tv=(TextView)v.findViewById(R.id.categories_events);
         tv.setText("COLORALO");
@@ -75,11 +78,17 @@ public class Coloralo extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            mAdapter = new MyAdapter(ar,getContext(),"coloralo");
+            mAdapter = new MyAdapter(ar,getContext(),"coloralo",pd);
             // mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setAdapter(mAdapter);
 
         }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        pd.hide();
+
     }
 }
 

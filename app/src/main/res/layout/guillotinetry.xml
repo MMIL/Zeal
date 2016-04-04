@@ -30,11 +30,13 @@
 
                 <ImageView
                     style="@style/ImageView.GuillotineItem"
-                    android:src="@drawable/ic_profile" />
+                    android:src="@drawable/ic_profile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem"
-                    android:text="@string/zealicon" />
+                    android:text="@string/home" />
             </LinearLayout>
 
             <LinearLayout
@@ -43,7 +45,9 @@
 
                 <ImageView
                     style="@style/ImageView.GuillotineItem"
-                    android:src="@drawable/ic_activity_active" />
+                    android:src="@drawable/ic_activity"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem"
@@ -56,7 +60,9 @@
 
                 <ImageView
                     style="@style/ImageView.GuillotineItem"
-                    android:src="@drawable/ic_feed" />
+                    android:src="@drawable/ic_feed"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem"
@@ -183,11 +189,14 @@
 
                 <ImageView
                     style="@style/ImageView.GuillotineItem"
-                    android:src="@drawable/ic_activity_active" />
+                    android:src="@drawable/ic_activity_active"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem.Selected"
-                    android:text="Contact Us" />
+                    android:text="Contact Us"
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
 
             <LinearLayout
@@ -196,20 +205,40 @@
 
                 <ImageView
                     style="@style/ImageView.GuillotineItem"
-                    android:src="@drawable/ic_activity_active" />
+                    android:src="@drawable/ic_feed"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"/>
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem.Selected"
-                    android:text="Our Team" />
+                    android:text="Our Team"
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
-
             <LinearLayout
-                android:id="@+id/settings_group"
-                style="@style/LinearLayout.GuillotineItem">
+                android:id="@+id/sponsors"
+                style="@style/LinearLayout.GuillotineItem"
+                android:layout_marginBottom="20dp">
 
                 <ImageView
                     style="@style/ImageView.GuillotineItem"
-                    android:src="@drawable/ic_settings" />
+                    android:src="@drawable/ic_profile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <com.yalantis.guillotine.sample.widget.CanaroTextView
+                    style="@style/TextView.GuillotineItem"
+                    android:text="Sponsors" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/settings_group"
+                style="@style/LinearLayout.GuillotineItem"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    style="@style/ImageView.GuillotineItem"
+                    android:src="@drawable/ic_settings"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
                 <com.yalantis.guillotine.sample.widget.CanaroTextView
                     style="@style/TextView.GuillotineItem"

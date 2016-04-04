@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:text="Name"
                         android:textColor="#FFFFFF"
-                        android:textSize="24sp"
+                        android:textSize="30sp"
                         android:textStyle="bold"
                         android:layout_gravity="center_horizontal"
                         android:id="@+id/text_event_details_name"/>
@@ -72,9 +72,10 @@
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:weightSum="100"
                 android:layout_marginRight="10dp"
                 android:orientation="horizontal">
                 <TextView
@@ -82,8 +83,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/toggle"
                     android:paddingTop="5dp"
+                    android:layout_weight="10"
                     android:textColor="#FFFFFF"
-                    android:textSize="15dp"
+                    android:textSize="16dp"
                     android:id="@+id/toggle_text"
                     android:textStyle="bold"
 
@@ -94,8 +96,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/switchcompat"
+
+                    android:layout_weight="90"
                     android:layout_gravity="right"
-                    android:layout_marginLeft="50dp"/>
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -249,14 +253,15 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/contact_guy"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/callbutton_eventdetails" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CAll US"
+                android:text="Call Us"
                 android:textSize="15dp"
                 android:layout_gravity="center_horizontal"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:id="@+id/call_text"/>
         </LinearLayout>
     </ScrollView>

@@ -1,5 +1,8 @@
 package com.yalantis.guillotine.sample.activity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,7 +20,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.yalantis.guillotine.sample.R;
+import com.yalantis.guillotine.sample.service.NotificationService;
+import com.yalantis.guillotine.sample.service.UpdateService;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +49,7 @@ SharedPreferences sf=getSharedPreferences("firsttime",0);
     }
 
     private void requestjson() {
+        startalarmmanager();
         final String url="http://zealbo.hackncs.com/events/";
 
         final RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -204,6 +213,27 @@ Intent in =new Intent(getApplicationContext(),MainActivity.class);
         stringRequestcoloralo.setRetryPolicy(policy);
         stringRequestzwars.setRetryPolicy(policy);
 
+    }
+
+    private void startalarmmanager() {
+        String toParse = "2016-04-06 10:00:00"; // Results in "2-5-2012 20:43"
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); // I assume d-M, you may refer to M-d for month-day instead.
+        Date date = null; // You will need try/catch around this
+        try {
+            date = formatter.parse(toParse);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long millis = date.getTime();
+        Intent intent=new Intent(getApplicationContext(), UpdateService.AlarmReceiverUpdate.class);
+
+
+
+        PendingIntent pi=PendingIntent.getBroadcast(getApplicationContext(),100000,intent,PendingIntent.FLAG_ONE_SHOT);
+
+        AlarmManager am=(AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        am.set(AlarmManager.RTC_WAKEUP,millis,pi);
     }
 
     @Override

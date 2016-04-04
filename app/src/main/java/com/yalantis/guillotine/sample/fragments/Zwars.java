@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.fragments;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class Zwars extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    ProgressDialog pd ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class Zwars extends Fragment {
         Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(), "huggable.ttf");
         tv.setTypeface(custom_font);
         l.setBackgroundResource(R.drawable.zwars);
+        pd = new ProgressDialog(getContext(),ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("ruko yar aa rha ha na");
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
@@ -75,11 +79,17 @@ public class Zwars extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            mAdapter = new MyAdapter(ar,getContext(),"zwars");
+            mAdapter = new MyAdapter(ar,getContext(),"zwars",pd);
             // mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setAdapter(mAdapter);
 
         }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        pd.hide();
+
     }
 }
 

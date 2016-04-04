@@ -3,6 +3,7 @@
     package="com.yalantis.guillotine.sample">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".connectionutils.ApplicationWrapper"
@@ -32,6 +33,10 @@
         <service android:name=".service.NotificationService"/>
         <receiver android:name=".service.NotificationService$AlarmReceiver"
             android:screenOrientation="portrait" />
+
+        <service android:name=".service.UpdateService"/>
+        <receiver android:name=".service.UpdateService$AlarmReceiverUpdate"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.Register"
             android:label="@string/title_activity_register"
@@ -40,6 +45,13 @@
             android:name=".activity.Retry"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.Sponsors"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

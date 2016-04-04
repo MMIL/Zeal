@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.activity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         guillotineMenu.findViewById(R.id.zwars_group).setOnClickListener(this);
         guillotineMenu.findViewById(R.id.settings_group).setOnClickListener(this);
         guillotineMenu.findViewById(R.id.our_team).setOnClickListener(this);
+        guillotineMenu.findViewById(R.id.sponsors).setOnClickListener(this);
 
 
         guillotineMenu.findViewById(R.id.activity_group).setOnClickListener(this);
@@ -160,6 +162,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.settings_group:
                 finish();
                 break;
+            case R.id.sponsors:
+                Intent intent=new Intent(getApplicationContext(),Sponsors.class);
+                startActivity(intent);
+                break;
+
         }
     }
 

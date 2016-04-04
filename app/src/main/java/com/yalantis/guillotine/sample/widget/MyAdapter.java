@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.widget;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements View.OnClickListener {
     private ArrayList<String> mDataset;
+    ProgressDialog pd ;
 Context context;
 String token;
 
@@ -51,10 +53,11 @@ String token;
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<String> myDataset, Context context,String token) {
+    public MyAdapter(ArrayList<String> myDataset, Context context,String token,ProgressDialog pd) {
         mDataset = myDataset;
 this.context=context;
         this.token=token;
+        this.pd = pd ;
     }
 
     // Create new views (invoked by the layout manager)
@@ -81,6 +84,8 @@ this.context=context;
 holder.rl.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+        pd.show();
+
         Intent in=new Intent(context, EventDetails.class);
         Bundle b=new Bundle();
         b.putInt("pos",position);

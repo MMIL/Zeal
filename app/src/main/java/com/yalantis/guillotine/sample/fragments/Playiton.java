@@ -1,5 +1,6 @@
 package com.yalantis.guillotine.sample.fragments;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class Playiton extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    ProgressDialog pd ;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class Playiton extends Fragment {
         Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(), "huggable.ttf");
         tv.setTypeface(custom_font);
         l.setBackgroundResource(R.drawable.playitonbackground);
+        pd = new ProgressDialog(getContext(),ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("ruko yar aa rha ha na");
 
       //  CardView cardView=(CardView)v.findViewById(R.id.card_view_recycleitem);
       //  cardView.setCardBackgroundColor(getResources().getColor(R.color.playiton));
@@ -79,10 +83,16 @@ public class Playiton extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            mAdapter = new MyAdapter(ar,getContext(),"playiton");
+            mAdapter = new MyAdapter(ar,getContext(),"playiton",pd);
             // mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setAdapter(mAdapter);
 
         }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        pd.hide();
+
     }
 }
