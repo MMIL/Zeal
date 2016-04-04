@@ -21,6 +21,19 @@
         android:id="@+id/imageView"
         android:paddingBottom="10dp"
         android:layout_gravity="center_horizontal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/zealid_linear"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_zealid"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            />
+    </LinearLayout>
 
 <LinearLayout
     android:layout_width="match_parent"

@@ -43,6 +43,11 @@
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".activity.RegisterTry"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".activity.Retry"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme"
@@ -50,6 +55,11 @@
         <activity
             android:name=".activity.Sponsors"
             android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ZealId"
+
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"/>
 
